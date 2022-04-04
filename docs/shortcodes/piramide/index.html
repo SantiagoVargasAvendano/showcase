@@ -1,0 +1,222 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Ilusión de la pirámide #  Ilusión #  Código en p5.js let maxSixe = 500, h, maxMumberSquares = 50, squares = 1, color_val = &#34;Azul&#34;, invert_flag = 1; function setup() {  createCanvas(maxSixe+100, maxSixe);  background(255);  noStroke();  frameRate(20);   buttonUp = createButton('⯅');  buttonUp.position(560, 200);  buttonUp.mousePressed(changeUp);   buttonDown = createButton('⯆');  buttonDown.position(560, 220);  buttonDown.mousePressed(changeDown);   buttonReset = createButton('Resetear');  buttonReset.position(525, 100);  buttonReset."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content><meta property="og:description" content="Ilusión de la pirámide #  Ilusión #  Código en p5.js let maxSixe = 500, h, maxMumberSquares = 50, squares = 1, color_val = &#34;Azul&#34;, invert_flag = 1; function setup() {  createCanvas(maxSixe+100, maxSixe);  background(255);  noStroke();  frameRate(20);   buttonUp = createButton('⯅');  buttonUp.position(560, 200);  buttonUp.mousePressed(changeUp);   buttonDown = createButton('⯆');  buttonDown.position(560, 220);  buttonDown.mousePressed(changeDown);   buttonReset = createButton('Resetear');  buttonReset.position(525, 100);  buttonReset."><meta property="og:type" content="article"><meta property="og:url" content="https://santiagovargasavendano.github.io/showcase/docs/shortcodes/piramide/"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2022-04-04T09:23:01-05:00"><title>Piramide | Showcase Template</title><link rel=manifest href=/showcase/manifest.json><link rel=icon href=/showcase/favicon.png type=image/x-icon><link rel=stylesheet href=/showcase/book.min.ab46de3e725a6415339a37bba23a0067534a37289b063c9f8d011515a63097a8.css integrity="sha256-q0bePnJaZBUzmje7ojoAZ1NKNyibBjyfjQEVFaYwl6g=" crossorigin=anonymous><script defer src=/showcase/flexsearch.min.js></script>
+<script defer src=/showcase/en.search.min.2989eda0b2b9059f89750837f22b67088d1a57923dc8211b99cb208b4f828e9d.js integrity="sha256-KYntoLK5BZ+JdQg38itnCI0aV5I9yCEbmcsgi0+Cjp0=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/showcase/><span>Showcase Template</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li class=book-section-flat><span>Shortcodes</span><ul><li><a href=/showcase/docs/shortcodes/buttons/>Buttons</a></li><li><a href=/showcase/docs/shortcodes/columns/>Columns</a></li><li><a href=/showcase/docs/shortcodes/details/>Details</a></li><li><a href=/showcase/docs/shortcodes/ebbinghaus/>Ebbinghaus</a></li><li><a href=/showcase/docs/shortcodes/estereoquinetico/>Estereoquinetico</a></li><li><a href=/showcase/docs/shortcodes/expand/>Expand</a></li><li><a href=/showcase/docs/shortcodes/hints/>Hints</a></li><li><a href=/showcase/docs/shortcodes/integrantes/>Integrantes</a></li><li><a href=/showcase/docs/shortcodes/katex/>Katex</a></li><li><a href=/showcase/docs/shortcodes/mermaid/>Mermaid</a></li><li><input type=checkbox id=section-ec67a64aba70b9df3d2a9acd6c92e3bc class=toggle>
+<label for=section-ec67a64aba70b9df3d2a9acd6c92e3bc class="flex justify-between"><a href=/showcase/docs/shortcodes/p5/>P5</a></label><ul><li><a href=/showcase/docs/shortcodes/p5/div/>Div</a></li><li><a href=/showcase/docs/shortcodes/p5/iframe/>Iframe</a></li></ul></li><li><a href=/showcase/docs/shortcodes/piramide/ class=active>Piramide</a></li><li><a href=/showcase/docs/shortcodes/registros/>Registros</a></li><li><a href=/showcase/docs/shortcodes/tabs/>Tabs</a></li></ul></li></ul><ul><li><a href=/showcase/posts/>Blog</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/showcase/svg/menu.svg class=book-icon alt=Menu></label>
+<strong>Piramide</strong>
+<label for=toc-control><img src=/showcase/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#ilusión-de-la-pirámide>Ilusión de la pirámide</a><ul><li><a href=#ilusión>Ilusión</a></li><li><a href=#manejo-de-la-ilusión>Manejo de la ilusión</a></li><li><a href=#qué-se-observa>¿Qué se observa?</a></li><li><a href=#qué-está-sucediendo>¿Qué está sucediendo?</a></li></ul></li></ul></nav></aside></header><article class=markdown><h1 id=ilusión-de-la-pirámide>Ilusión de la pirámide
+<a class=anchor href=#ilusi%c3%b3n-de-la-pir%c3%a1mide>#</a></h1><h2 id=ilusión>Ilusión
+<a class=anchor href=#ilusi%c3%b3n>#</a></h2><p><details><summary>Código en p5.js</summary><div class=markdown-inner><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>maxSixe</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>500</span>, <span style=color:#a6e22e>h</span>, <span style=color:#a6e22e>maxMumberSquares</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>50</span>, <span style=color:#a6e22e>squares</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>, <span style=color:#a6e22e>color_val</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Azul&#34;</span>, <span style=color:#a6e22e>invert_flag</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>setup</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>createCanvas</span>(<span style=color:#a6e22e>maxSixe</span><span style=color:#f92672>+</span><span style=color:#ae81ff>100</span>, <span style=color:#a6e22e>maxSixe</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>background</span>(<span style=color:#ae81ff>255</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>noStroke</span>();
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>frameRate</span>(<span style=color:#ae81ff>20</span>);
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>buttonUp</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createButton</span>(<span style=color:#e6db74>&#39;⯅&#39;</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>buttonUp</span>.<span style=color:#a6e22e>position</span>(<span style=color:#ae81ff>560</span>, <span style=color:#ae81ff>200</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>buttonUp</span>.<span style=color:#a6e22e>mousePressed</span>(<span style=color:#a6e22e>changeUp</span>);
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>buttonDown</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createButton</span>(<span style=color:#e6db74>&#39;⯆&#39;</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>buttonDown</span>.<span style=color:#a6e22e>position</span>(<span style=color:#ae81ff>560</span>, <span style=color:#ae81ff>220</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>buttonDown</span>.<span style=color:#a6e22e>mousePressed</span>(<span style=color:#a6e22e>changeDown</span>);
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>buttonReset</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createButton</span>(<span style=color:#e6db74>&#39;Resetear&#39;</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>buttonReset</span>.<span style=color:#a6e22e>position</span>(<span style=color:#ae81ff>525</span>, <span style=color:#ae81ff>100</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>buttonReset</span>.<span style=color:#a6e22e>mousePressed</span>(<span style=color:#a6e22e>reset</span>);
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>buttonInvert</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createButton</span>(<span style=color:#e6db74>&#39;Invertir&#39;</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>buttonInvert</span>.<span style=color:#a6e22e>position</span>(<span style=color:#ae81ff>530</span>, <span style=color:#ae81ff>400</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>buttonInvert</span>.<span style=color:#a6e22e>mousePressed</span>(<span style=color:#a6e22e>invert</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>buttonInvert</span>.<span style=color:#a6e22e>style</span>(<span style=color:#e6db74>&#39;background-color&#39;</span>, <span style=color:#a6e22e>color</span>(<span style=color:#ae81ff>255</span>));
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>color_sel</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>createSelect</span>();
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>color_sel</span>.<span style=color:#a6e22e>position</span>(<span style=color:#ae81ff>530</span>, <span style=color:#ae81ff>300</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>color_sel</span>.<span style=color:#a6e22e>option</span>(<span style=color:#e6db74>&#39;Azul&#39;</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>color_sel</span>.<span style=color:#a6e22e>option</span>(<span style=color:#e6db74>&#39;Verde&#39;</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>color_sel</span>.<span style=color:#a6e22e>option</span>(<span style=color:#e6db74>&#39;Rojo&#39;</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>color_sel</span>.<span style=color:#a6e22e>selected</span>(<span style=color:#e6db74>&#39;Azul&#39;</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>color_sel</span>.<span style=color:#a6e22e>changed</span>(<span style=color:#a6e22e>mySelectEvent</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>invert</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>invert_flag</span> <span style=color:#f92672>*=</span> <span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>invert_flag</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>){
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>buttonInvert</span>.<span style=color:#a6e22e>style</span>(<span style=color:#e6db74>&#39;background-color&#39;</span>, <span style=color:#a6e22e>color</span>(<span style=color:#ae81ff>255</span>));
+</span></span><span style=display:flex><span>  }<span style=color:#66d9ef>else</span>{
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>buttonInvert</span>.<span style=color:#a6e22e>style</span>(<span style=color:#e6db74>&#39;background-color&#39;</span>, <span style=color:#a6e22e>color</span>(<span style=color:#ae81ff>125</span>));
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>reset</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>squares</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>color_val</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Azul&#34;</span>;
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>color_sel</span>.<span style=color:#a6e22e>selected</span>(<span style=color:#e6db74>&#39;Azul&#39;</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>mySelectEvent</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>color_val</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>color_sel</span>.<span style=color:#a6e22e>value</span>();
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>changeUp</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>squares</span><span style=color:#f92672>+</span><span style=color:#ae81ff>1</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>maxMumberSquares</span>){
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>squares</span> <span style=color:#f92672>+=</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>changeDown</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>squares</span><span style=color:#f92672>-</span><span style=color:#ae81ff>1</span><span style=color:#f92672>&gt;</span><span style=color:#ae81ff>0</span>){
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>squares</span> <span style=color:#f92672>-=</span> <span style=color:#ae81ff>1</span>;
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>draw</span>() {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>fill</span>(<span style=color:#ae81ff>255</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>rect</span>(<span style=color:#ae81ff>530</span>,<span style=color:#ae81ff>200</span>,<span style=color:#ae81ff>20</span>,<span style=color:#ae81ff>45</span>)
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>textSize</span>(<span style=color:#ae81ff>15</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>fill</span>(<span style=color:#ae81ff>0</span>);
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>text</span>(<span style=color:#a6e22e>squares</span>, <span style=color:#ae81ff>530</span>,<span style=color:#ae81ff>210</span>,<span style=color:#ae81ff>20</span>,<span style=color:#ae81ff>60</span>);
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>squares</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>maxMumberSquares</span>){
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>h</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>maxSixe</span><span style=color:#f92672>/</span>(<span style=color:#ae81ff>2</span><span style=color:#f92672>*</span><span style=color:#a6e22e>squares</span>);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>squares</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span>){
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>invert_flag</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>){
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>color_val</span> <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;Rojo&#34;</span>){
+</span></span><span style=display:flex><span>          <span style=color:#a6e22e>fill</span>(<span style=color:#ae81ff>255</span>,<span style=color:#ae81ff>0</span><span style=color:#f92672>+</span><span style=color:#a6e22e>i</span><span style=color:#f92672>*</span>(<span style=color:#ae81ff>255</span><span style=color:#f92672>/</span><span style=color:#a6e22e>squares</span>),<span style=color:#ae81ff>0</span><span style=color:#f92672>+</span><span style=color:#a6e22e>i</span><span style=color:#f92672>*</span>(<span style=color:#ae81ff>255</span><span style=color:#f92672>/</span><span style=color:#a6e22e>squares</span>));
+</span></span><span style=display:flex><span>        }<span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>color_val</span> <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;Verde&#34;</span>){
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>fill</span>(<span style=color:#ae81ff>0</span><span style=color:#f92672>+</span><span style=color:#a6e22e>i</span><span style=color:#f92672>*</span>(<span style=color:#ae81ff>255</span><span style=color:#f92672>/</span><span style=color:#a6e22e>squares</span>),<span style=color:#ae81ff>255</span>,<span style=color:#ae81ff>0</span><span style=color:#f92672>+</span><span style=color:#a6e22e>i</span><span style=color:#f92672>*</span>(<span style=color:#ae81ff>255</span><span style=color:#f92672>/</span><span style=color:#a6e22e>squares</span>));
+</span></span><span style=display:flex><span>        }<span style=color:#66d9ef>else</span>{
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>fill</span>(<span style=color:#ae81ff>0</span><span style=color:#f92672>+</span><span style=color:#a6e22e>i</span><span style=color:#f92672>*</span>(<span style=color:#ae81ff>255</span><span style=color:#f92672>/</span><span style=color:#a6e22e>squares</span>),<span style=color:#ae81ff>0</span><span style=color:#f92672>+</span><span style=color:#a6e22e>i</span><span style=color:#f92672>*</span>(<span style=color:#ae81ff>255</span><span style=color:#f92672>/</span><span style=color:#a6e22e>squares</span>),<span style=color:#ae81ff>255</span>);
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>      }<span style=color:#66d9ef>else</span>{
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>color_val</span> <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;Rojo&#34;</span>){
+</span></span><span style=display:flex><span>          <span style=color:#a6e22e>fill</span>(<span style=color:#ae81ff>255</span><span style=color:#f92672>-</span><span style=color:#a6e22e>i</span><span style=color:#f92672>*</span>(<span style=color:#ae81ff>255</span><span style=color:#f92672>/</span><span style=color:#a6e22e>squares</span>),<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>0</span>);
+</span></span><span style=display:flex><span>        }<span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>color_val</span> <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;Verde&#34;</span>){
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>fill</span>(<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>255</span><span style=color:#f92672>-</span><span style=color:#a6e22e>i</span><span style=color:#f92672>*</span>(<span style=color:#ae81ff>255</span><span style=color:#f92672>/</span><span style=color:#a6e22e>squares</span>),<span style=color:#ae81ff>0</span>);
+</span></span><span style=display:flex><span>        }<span style=color:#66d9ef>else</span>{
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>fill</span>(<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>255</span><span style=color:#f92672>-</span><span style=color:#a6e22e>i</span><span style=color:#f92672>*</span>(<span style=color:#ae81ff>255</span><span style=color:#f92672>/</span><span style=color:#a6e22e>squares</span>));
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>rect</span>(<span style=color:#ae81ff>0</span><span style=color:#f92672>+</span><span style=color:#a6e22e>i</span><span style=color:#f92672>*</span><span style=color:#a6e22e>h</span>,<span style=color:#ae81ff>0</span><span style=color:#f92672>+</span><span style=color:#a6e22e>i</span><span style=color:#f92672>*</span><span style=color:#a6e22e>h</span>, <span style=color:#ae81ff>500</span><span style=color:#f92672>-</span><span style=color:#a6e22e>i</span><span style=color:#f92672>*</span><span style=color:#ae81ff>2</span><span style=color:#f92672>*</span><span style=color:#a6e22e>h</span>);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div></details><iframe id=pyramid style=width:625px;height:525px srcdoc="
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js></script>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/addons/p5.sound.min.js></script>
+            
+            
+            
+            
+            
+            <script>
+              
+let maxSixe = 500, h, maxMumberSquares = 50, squares = 1, color_val = &#34;Azul&#34;, invert_flag = 1;
+function setup() {
+  createCanvas(maxSixe+100, maxSixe);
+  background(255);
+  noStroke();
+  frameRate(20);
+  
+  buttonUp = createButton('⯅');
+  buttonUp.position(560, 200);
+  buttonUp.mousePressed(changeUp);
+  
+  buttonDown = createButton('⯆');
+  buttonDown.position(560, 220);
+  buttonDown.mousePressed(changeDown);
+  
+  buttonReset = createButton('Resetear');
+  buttonReset.position(525, 100);
+  buttonReset.mousePressed(reset);
+  
+  buttonInvert = createButton('Invertir');
+  buttonInvert.position(530, 400);
+  buttonInvert.mousePressed(invert);
+  buttonInvert.style('background-color', color(255));
+  
+  color_sel = createSelect();
+  color_sel.position(530, 300);
+  color_sel.option('Azul');
+  color_sel.option('Verde');
+  color_sel.option('Rojo');
+  color_sel.selected('Azul');
+  color_sel.changed(mySelectEvent);
+}
+
+function invert() {
+  invert_flag *= -1;
+  if(invert_flag > 0){
+    buttonInvert.style('background-color', color(255));
+  }else{
+    buttonInvert.style('background-color', color(125));
+  }
+}
+
+function reset() {
+  squares = 1;
+  color_val = &#34;Azul&#34;;
+  color_sel.selected('Azul');
+}
+
+function mySelectEvent() {
+  color_val = color_sel.value();
+}
+
+function changeUp() {
+  if(squares+1 < maxMumberSquares){
+    squares += 1;
+  }
+}
+
+function changeDown() {
+  if(squares-1>0){
+    squares -= 1;
+  }
+}
+
+function draw() {
+  fill(255);
+  rect(530,200,20,45)
+  textSize(15);
+  fill(0);
+  text(squares, 530,210,20,60);
+  
+  if(squares < maxMumberSquares){
+    h = maxSixe/(2*squares);
+    for(let i = 0; i < squares; i++){
+      if(invert_flag > 0){
+        if(color_val == &#34;Rojo&#34;){
+          fill(255,0+i*(255/squares),0+i*(255/squares));
+        }else if(color_val == &#34;Verde&#34;){
+            fill(0+i*(255/squares),255,0+i*(255/squares));
+        }else{
+            fill(0+i*(255/squares),0+i*(255/squares),255);
+        }
+      }else{
+        if(color_val == &#34;Rojo&#34;){
+          fill(255-i*(255/squares),0,0);
+        }else if(color_val == &#34;Verde&#34;){
+            fill(0,255-i*(255/squares),0);
+        }else{
+            fill(0,0,255-i*(255/squares));
+        }
+      }
+      rect(0+i*h,0+i*h, 500-i*2*h);
+    }
+  }
+}
+
+            </script>
+          </head>
+          <body>
+          </body>
+        </html>
+      "></iframe></p><h2 id=manejo-de-la-ilusión>Manejo de la ilusión
+<a class=anchor href=#manejo-de-la-ilusi%c3%b3n>#</a></h2><p>En la parte derecha de la ilusión se encuentran los controles para manejarla, el primero es un botón de &ldquo;Resetearla&rdquo; que lleva la ilusión a sus valores por defecto que es 1 cuadro y el color azul; seguido encontramos dos botones junto con un número a su lado el botón con la flecha hacia arriba aumenta la cantidad de cuadrados (hasta 50), el botón con la flecha hacia abajo disminuye la cantidad de cuadrados (hasta 1) y el número al lado de ellos muestra la cantidad actual de cuadrados; luego hayamos un menú desplegable en el cual podemos escoger cualquiera de los tres colores con los cuales se presenta la ilusión de la pirámide y por ultimo se encuentra un botón para “Invertir” la ilusión, es decir, que el degrade desde el color principal sea hacia blanco o hacia negro.</p><h2 id=qué-se-observa>¿Qué se observa?
+<a class=anchor href=#qu%c3%a9-se-observa>#</a></h2><p>El propósito de la ilusión es que entre mayor sea la cantidad de recuadros se genera una ilusión óptica como si existiera una &ldquo;X&rdquo; en las esquinas cuando está realmente no existe, cuando el centro es blanco la &ldquo;X&rdquo; es clara mientras que cuando el centro es negro la &ldquo;X&rdquo; es oscura. Esto se va generando, superponiendo cuadrados que en cuento se vuelven más pequeños, también se acercan más hacia el color esperado (negro o blanco).</p><h2 id=qué-está-sucediendo>¿Qué está sucediendo?
+<a class=anchor href=#qu%c3%a9-est%c3%a1-sucediendo>#</a></h2><p>La ilusión de la pirámide (también llamada ilusión de Vasarely) es un llamativo efecto perceptivo relacionado con todos los fenómenos que implican inhibición lateral. El efecto se produce cuando se apilan cuadrados concéntricos (u otras figuras geométricas como la estrella) de tamaño y luminancia decrecientes.
+La explicación consiste en considerar las disposiciones de los campos receptivos de las células ganglionares antagónicas del centro-rededor que conviven con la imagen. Imaginemos una célula en una esquina con su centro en la mancha más clara, será inhibida por 1/4 de entorno de las manchas más claras y por 3/4 de las manchas más oscuras, así las células ganglionares de los bordes señalan más luminosidad. La percepción se integra con la información de las células ganglionares y se elimina la fuerte distorsión de la luminancia.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/visualcomputing/showcase/commit/cf341eb3c57a9203641cc54aba755619060c1bfb title="Last modified by Santiago Vargas Avendaño | April 4, 2022" target=_blank rel=noopener><img src=/showcase/svg/calendar.svg class=book-icon alt=Calendar>
+<span>April 4, 2022</span></a></div></div><script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#ilusión-de-la-pirámide>Ilusión de la pirámide</a><ul><li><a href=#ilusión>Ilusión</a></li><li><a href=#manejo-de-la-ilusión>Manejo de la ilusión</a></li><li><a href=#qué-se-observa>¿Qué se observa?</a></li><li><a href=#qué-está-sucediendo>¿Qué está sucediendo?</a></li></ul></li></ul></nav></div></aside></main></body></html>
