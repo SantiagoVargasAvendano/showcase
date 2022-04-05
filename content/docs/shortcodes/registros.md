@@ -8,7 +8,7 @@ En está página se mantienen el registro de los encuentros
 Primera entrega de propuesta hacia el profesor de 3 ilusiones visuales:
 - Ilusión de la piramide
 - Ilusión dinámica de Ebbinghaus
-- Efecto estereoquinético
+- Efecto estereoquinético <br>
 también se planteó la idea de entregar un programa de "Todo es Om" pero por motivos de alcance de la entrega se concluyó que no era ideal.
 {{< /details >}}
 

@@ -3,20 +3,19 @@
 ## Emmanuel Steven Rojas Arcila
 
 {{< columns >}}
-![Emmanuel Rojas](https://www.tuexperto.com/wp-content/uploads/2015/07/perfil_01.jpg)
+![Emmanuel Rojas](/showcase/sketches/Emmanuel.jpg 'Emmanuel Rojas')
 
 <--->
 
 ## Perfil
-Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
-stringit, frustra Saturnius uteroque inter!
+Estudiante de Sistemas y Computación cursando noveno semestre en la Universidad nacional de Colombia. Con intereses en las ramas de la criptografía y desarrollo de software con enfoques en el sector del frontend. Entre sus intereses fuera del área académica se encuentran realizar ejercicio y ver películas.
 
 {{< /columns >}}
 
 ## Santiago Vargas Avendaño
 
 {{< columns >}}
-![Santiago Vargas](https://drive.google.com/file/d/1dOnBdFZy9tNoNdL4__CP-Ajga0EAnmsD/view?usp=sharing)
+![Santiago Vargas](/showcase/sketches/Santiago.jpg 'Santiago Vargas')
 
 <--->
 

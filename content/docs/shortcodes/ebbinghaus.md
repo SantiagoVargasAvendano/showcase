@@ -1,6 +1,15 @@
 # Ilusión dinámica de Ebbinghaus
 
-## Ilusión
+## Planteamiento del problema
+
+Dentro del sitio web de Michael Bach se encontró una ilusión óptica que es la versión dinámica de ["La ilusión de Ebbinghaus"](https://michaelbach.de/ot/cog-Ebbinghaus/index.html). La ilusión consta de un anillo de discos azules y en su centro un disco naranja y todo se mueve, los discos azules cambian de tamaño pero el disco naranja permanece siempre con un tamaño constante, sin embargo, cuando los discos azules alcanzan el mayor tamaño el disco naranja parece haber disminuido de tamaño y de igual manera cuando los discos azules alcanzan su menor tamaño el disco naranja parece haber aumentado su tamaño.
+
+## Antecedentes
+
+Esta ilusión corresponde a una variación dinámica de la ilusión de Ebbinghaus, variación creada por Christopher D. Blair, Gideon P. Caplovitz y Ryan E.B. Mruczek, que logró potenciar la fuerza de la ilusión y fue ganadora en el "Visual Illusion Contest" de 2014. 
+En la ilusión de Ebbinghaus, se ven dos anillos de discos azules uno con los discos grandes y otro con los discos pequeños, en el centro de ambos anillos hay dos discos naranjas que a pesar de que no lo parezcan tienen igual tamaño; la ilusión lleva el nombre de Hermann Ebbinghaus, un pionero en la investigación de la memoria, que probablemente descubrió esta ilusión en la década de 1890, pero no la divulgó en ninguna publicación específica. Más adelante, Titchener (sin reclamar su autoría) la publicó en un libro de texto de 1901; por ello, también se le suele conocer como la ilusión de Titchener. 
+
+## Código (solución) y resultados
 
 {{< details title="Código en p5.js" open=false >}}
 ```js
@@ -89,10 +98,7 @@ function draw() {
 }
 {{< /p5-global-iframe >}}
 
-## ¿Qué se observa?
+## Conclusiones y trabajo futuro
 
-El 
-
-## ¿Qué está sucediendo?
-
-La
+Basados en los resultados y en un proceso de observación, se concluye que existe una tendencia a aumentar el fenómeno visual generado cuando la visión del observador se fija en la circunferencia interior plasmada dentro del disco azul superior izquierdo. La ilusión de Ebbinghaus ha desempeñado un papel crucial en el debate sobre la existencia de vías separadas en el cerebro para la visión de percepción y visión de la acción. Se ha argumentado que la ilusión de Ebbinghaus distorsiona la percepción del tamaño, pero no para la acción. Así mismo se encontró un estudio en el cual muestran que existen 70 variantes genéticas relacionadas con la percepción de la ilusión de Ebbinghaus.
+Uno de los distintos campos en los que se puede seguir trabajando con la ilusión de Ebbinghaus es con la percepción de colores y si estos afectan de alguna manera la percepción del tamaño, también se puede considerar analizar si la forma en la que se está moviendo el sistema afecta que tanto se percibe la ilusión.

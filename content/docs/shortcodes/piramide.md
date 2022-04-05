@@ -1,6 +1,18 @@
 # Ilusión de la pirámide
 
-## Ilusión
+## Planteamiento del problema
+
+Se encontró dentro del archivo web del investigador [Michael Bach](https://michaelbach.de/ot) sobre fenómenos visuales, una ilusión óptica denominada “ilusión de la pirámide” efecto perceptivo relacionado con todos los fenómenos que implican inhibición lateral. 
+ 
+La inhibición lateral se define como el proceso por el cual una célula inhibe la actividad de las células adyacentes. En las células de la retina, la inhibición lateral genera un realce de los bordes y un mayor contraste en las imágenes que se forman en el cerebro. El efecto de ésta inhibición lateral fue descubierto por Ernst Mach, que explicó en 1865 la ilusión visual denominada bandas de March. Este efecto produce que paneles que generan diferentes sombras colocados uno al lado del otro aparezcan más claros o más oscuros en las transiciones, a pesar del color uniforme dentro de un panel. Los paneles aparecen más claros en el borde con un panel más oscuro, y más oscuros en el borde con un panel más claro. 
+ 
+El propósito de la ilusión yace en generar la sensación de la existencia de una “X” dentro de cuadrados concéntricos en sus esquinas cuando realmente no existe. Para esto, se implementó un código que generase cuadrados concéntricos uno encima de otro, en el cual se va degradando ligeramente el color del cuadro siguiente, con lo cual, conforme mayor sea la cantidad de cuadros generados, la ilusión óptica empieza a hacer su aparición.
+
+## Antecedentes
+
+Se tiene conocimiento de que fue demostrado por primera vez por Martinez-Conde & Macknik en la Reunión Soc Neurosci de 2001. Se ha incorporado a muchas pinturas Op Art como Arcturus II de Victor Vasarely.
+
+## Código (solución) y resultados
 
 {{< details title="Código en p5.js" open=false >}}
 ```js
@@ -203,11 +215,6 @@ function draw() {
 
 En la parte derecha de la ilusión se encuentran los controles para manejarla, el primero es un botón de "Resetearla" que lleva la ilusión a sus valores por defecto que es 1 cuadro y el color azul; seguido encontramos dos botones junto con un número a su lado el botón con la flecha hacia arriba aumenta la cantidad de cuadrados (hasta 50), el botón con la flecha hacia abajo disminuye la cantidad de cuadrados (hasta 1) y el número al lado de ellos muestra la cantidad actual de cuadrados; luego hayamos un menú desplegable en el cual podemos escoger cualquiera de los tres colores con los cuales se presenta la ilusión de la pirámide y por ultimo se encuentra un botón para “Invertir” la ilusión, es decir, que el degrade desde el color principal sea hacia blanco o hacia negro.
 
-## ¿Qué se observa?
+## Conclusiones y trabajo futuro
 
-El propósito de la ilusión es que entre mayor sea la cantidad de recuadros se genera una ilusión óptica como si existiera una "X" en las esquinas cuando está realmente no existe, cuando el centro es blanco la "X" es clara mientras que cuando el centro es negro la "X" es oscura. Esto se va generando, superponiendo cuadrados que en cuento se vuelven más pequeños, también se acercan más hacia el color esperado (negro o blanco).
-
-## ¿Qué está sucediendo?
-
-La ilusión de la pirámide (también llamada ilusión de Vasarely) es un llamativo efecto perceptivo relacionado con todos los fenómenos que implican inhibición lateral. El efecto se produce cuando se apilan cuadrados concéntricos (u otras figuras geométricas como la estrella) de tamaño y luminancia decrecientes.
-La explicación consiste en considerar las disposiciones de los campos receptivos de las células ganglionares antagónicas del centro-rededor que conviven con la imagen. Imaginemos una célula en una esquina con su centro en la mancha más clara, será inhibida por 1/4 de entorno de las manchas más claras y por 3/4 de las manchas más oscuras, así las células ganglionares de los bordes señalan más luminosidad. La percepción se integra con la información de las células ganglionares y se elimina la fuerte distorsión de la luminancia.
+La ilusión de la pirámide es un llamativo efecto perceptivo relacionado con todos los fenómenos que implican inhibición lateral. Como se puedo observar, al generar varios cuadrados y conforme esta cantidad aumentaba el efecto visual de la aparición de una “X” en medio del escenario, adicionalmente, dicho efecto y su impresión en el observador podría cambiar dependiendo del color al que se dezplacen los cuadrados, blanco o negro, generando una sensación de realce o profundidad respectivamente. La explicación consiste en considerar las disposiciones de los campos receptivos de las células ganglionares antagónicas del centro-rededor que conviven con la imagen. Imaginemos una célula en una esquina con su centro en la mancha más clara, será inhibida por 1/4 de entorno de las manchas más claras y por 3/4 de las manchas más oscuras, así las células ganglionares de los bordes señalan más luminosidad. La percepción se integra con la información de las células ganglionares y se elimina la fuerte distorsión de la luminancia.
