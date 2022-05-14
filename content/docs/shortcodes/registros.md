@@ -17,3 +17,9 @@ también se planteó la idea de entregar un programa de "Todo es Om" pero por mo
 {{< details title="31/marzo/2022" open=false >}}
 En esta sesión se presentó al profesor la ilusión dinámica de Ebbinghaus y la ilusión de la piramide, a lo cual se recibieron sus respectivas recomendaciones y sugerencias por parte del profesor, durante la clase se trabajó para poder determinar bien las coordenadas en las ilusiones.
 {{< /details >}}
+
+## Segundo taller
+
+{{< details title="03/mayo/2022" open=false >}}
+
+{{< /details >}}
