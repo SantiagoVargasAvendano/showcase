@@ -1,0 +1,199 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Espacios #  Planteamiento del problema #  Antecedentes #  Código (solución) y resultados #  Código en p5.js function initPressure() {  Pressure.set('#uiCanvas', {  end: function(){  pressure = 0;  },  change: function(force, event) {  pressure = force;  }  });   Pressure.config({  polyfill: true,  polyfillSpeedUp: 1000,  polyfillSpeedDown: 300,  preventSelect: true,  only: null  }); }            // Brush controls let color; let brush; let easycam; let state; let drawState; let escorzo; let points; let record; var pressure = -2; let size = 1; function setup() { canvas = createCanvas(600, 450, WEBGL); canvas."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content><meta property="og:description" content="Espacios #  Planteamiento del problema #  Antecedentes #  Código (solución) y resultados #  Código en p5.js function initPressure() {  Pressure.set('#uiCanvas', {  end: function(){  pressure = 0;  },  change: function(force, event) {  pressure = force;  }  });   Pressure.config({  polyfill: true,  polyfillSpeedUp: 1000,  polyfillSpeedDown: 300,  preventSelect: true,  only: null  }); }            // Brush controls let color; let brush; let easycam; let state; let drawState; let escorzo; let points; let record; var pressure = -2; let size = 1; function setup() { canvas = createCanvas(600, 450, WEBGL); canvas."><meta property="og:type" content="article"><meta property="og:url" content="https://santiagovargasavendano.github.io/showcase/docs/shortcodes/Taller-2/espacios/"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2022-05-22T00:36:31-05:00"><title>Espacios | Computación visual</title><link rel=manifest href=/showcase/manifest.json><link rel=icon href=/showcase/favicon.png type=image/x-icon><link rel=stylesheet href=/showcase/book.min.ab46de3e725a6415339a37bba23a0067534a37289b063c9f8d011515a63097a8.css integrity="sha256-q0bePnJaZBUzmje7ojoAZ1NKNyibBjyfjQEVFaYwl6g=" crossorigin=anonymous><script defer src=/showcase/flexsearch.min.js></script>
+<script defer src=/showcase/en.search.min.6bfae9aa0bf9e9d15e7e1fc42f82434ca2508b417ffd26881ffec4461baff36c.js integrity="sha256-a/rpqgv56dFefh/EL4JDTKJQi0F//SaIH/7ERhuv82w=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/showcase/><span>Computación visual</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li class=book-section-flat><span>Shortcodes</span><ul><li><a href=/showcase/docs/shortcodes/integrantes/>Integrantes</a></li><li><a href=/showcase/docs/shortcodes/referencias/>Referencias</a></li><li><a href=/showcase/docs/shortcodes/registros/>Registros</a></li><li><input type=checkbox id=section-543c92395a5da43e568c54aed57a7bf6 class=toggle>
+<label for=section-543c92395a5da43e568c54aed57a7bf6 class="flex justify-between"><a href=/showcase/docs/shortcodes/Taller-1/>Taller 1</a></label><ul><li><a href=/showcase/docs/shortcodes/Taller-1/ebbinghaus/>Ebbinghaus</a></li><li><a href=/showcase/docs/shortcodes/Taller-1/estereoquinetico/>Estereoquinetico</a></li><li><a href=/showcase/docs/shortcodes/Taller-1/piramide/>Piramide</a></li></ul></li><li><input type=checkbox id=section-3339356ac915f37974c010a9ff982b95 class=toggle checked>
+<label for=section-3339356ac915f37974c010a9ff982b95 class="flex justify-between"><a href=/showcase/docs/shortcodes/Taller-2/>Taller 2</a></label><ul><li><a href=/showcase/docs/shortcodes/Taller-2/antialiasing/>Antialiasing</a></li><li><a href=/showcase/docs/shortcodes/Taller-2/espacios/ class=active>Espacios</a></li></ul></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/showcase/svg/menu.svg class=book-icon alt=Menu></label>
+<strong>Espacios</strong>
+<label for=toc-control><img src=/showcase/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#espacios>Espacios</a><ul><li><a href=#planteamiento-del-problema>Planteamiento del problema</a></li><li><a href=#antecedentes>Antecedentes</a></li><li><a href=#código-solución-y-resultados>Código (solución) y resultados</a></li><li><a href=#conclusiones-y-trabajo-futuro>Conclusiones y trabajo futuro</a></li></ul></li></ul></nav></aside></header><article class=markdown><h1 id=espacios>Espacios
+<a class=anchor href=#espacios>#</a></h1><h2 id=planteamiento-del-problema>Planteamiento del problema
+<a class=anchor href=#planteamiento-del-problema>#</a></h2><h2 id=antecedentes>Antecedentes
+<a class=anchor href=#antecedentes>#</a></h2><h2 id=código-solución-y-resultados>Código (solución) y resultados
+<a class=anchor href=#c%c3%b3digo-soluci%c3%b3n-y-resultados>#</a></h2><details><summary>Código en p5.js</summary><div class=markdown-inner><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>initPressure</span>() {  
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>Pressure</span>.<span style=color:#a6e22e>set</span>(<span style=color:#e6db74>&#39;#uiCanvas&#39;</span>, {      
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>end</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>function</span>(){
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>pressure</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>change</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>function</span>(<span style=color:#a6e22e>force</span>, <span style=color:#a6e22e>event</span>) {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>pressure</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>force</span>;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  });
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>Pressure</span>.<span style=color:#a6e22e>config</span>({
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>polyfill</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>, 
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>polyfillSpeedUp</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>1000</span>, 
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>polyfillSpeedDown</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>300</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>preventSelect</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>,
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>only</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>null</span>
+</span></span><span style=display:flex><span>       });
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div></div></details><iframe id=spaces style=width:625px;height:475px srcdoc="
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js></script>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/addons/p5.sound.min.js></script>
+             <script src=https://cdn.jsdelivr.net/gh/VisualComputing/p5.treegl/p5.treegl.js></script> 
+             <script src=https://cdn.jsdelivr.net/gh/freshfork/p5.EasyCam@1.2.1/p5.easycam.js></script> 
+             <script src=/showcase/sketches/pressure.js></script> 
+            
+            
+            <script>
+              
+// Brush controls
+let color;
+let brush;
+
+let easycam;
+let state;
+let drawState;
+
+let escorzo;
+let points;
+let record;
+
+var pressure = -2;
+let size = 1;
+
+function setup() {
+  canvas = createCanvas(600, 450, WEBGL);
+  canvas.id(&#34;uiCanvas&#34;);
+  // easycam stuff
+  let state = {
+    distance: 250,           // scalar
+    center: [0, 0, 0],       // vector
+    rotation: [0, 0, 0, 1],  // quaternion
+  };
+  easycam = createEasyCam();
+  easycam.state_reset = state;   // state to use on reset (double-click/tap)
+  easycam.setState(state, 1000); // now animate to that state
+  escorzo = true;
+  perspective();
+
+  // brush stuff
+  points = [];
+  color = createColorPicker('#ed225d');
+  color.position(width - 70, 40);
+  
+  sel = createRadio();
+  sel.option('1', 'Esfera');
+  sel.option('2', 'Cubo');
+  sel.option('3', 'Cono');
+  sel.option('4', 'Toroide');
+  sel.option('5', 'Cilindro');
+  sel.position(width - 80, 100);
+  sel.selected('1');
+  sel.style('width', '75px');
+  // select initial brush
+  brush = Brush;
+  
+  initPressure();
+}
+
+function draw() {
+  update();
+  background(120);
+  push();
+  strokeWeight(0.8);
+  stroke('magenta');
+  grid({ dotted: false });
+  pop();
+  axes();
+  for (const point of points) {
+    push();
+    translate(point.worldPosition);
+    brush(point);
+    pop();
+  }
+}
+
+function update() {
+  let dx = abs(mouseX - pmouseX);
+  let dy = abs(mouseY - pmouseY);
+  speed = constrain((dx + dy) / (2 * (width - height)), 0, 1);
+  if (record) {
+    points.push({
+      worldPosition: treeLocation([mouseX, mouseY,pressure], { from: 'SCREEN', to: 'WORLD' }),
+      color: color.color(),
+      speed: speed,
+      size: size,
+      shape: sel.value()
+    });
+  }
+}
+
+function Brush(point) {
+  push();
+  noStroke();
+  fill(point.color);
+  if(point.shape==&#34;1&#34;){
+    sphere(point.size);
+  }else if(point.shape==&#34;2&#34;){
+    box(point.size);
+  }else if(point.shape==&#34;3&#34;){
+    cone(point.size,point.size);
+  }else if(point.shape==&#34;4&#34;){
+    torus(point.size+1,point.size);
+  }else{
+    cylinder(point.size,point.size);
+  }  
+  pop();
+}
+
+
+function keyPressed() {
+  if (key === 'r') {
+    record = !record;
+    if(record){
+      easycam.removeMouseListeners();
+    }else{
+      easycam.attachMouseListeners();
+    }
+  }
+  if (key === 'p') {
+    escorzo = !escorzo;
+    escorzo ? perspective() : ortho();
+  }
+  if (key == 'c') {
+    points = [];
+  }
+  if (key == 'a') {
+    size++;
+  } 
+  if (key == 'm') {
+    size--;
+  } 
+}
+
+function mouseWheel(event) {
+  //comment to enable page scrolling
+  return false;
+}
+
+function initPressure() {  
+  Pressure.set('#uiCanvas', {      
+    end: function(){
+      pressure = 0;
+      },
+    change: function(force, event) {
+      pressure = force;
+    }
+  });
+
+  Pressure.config({
+    polyfill: true, 
+    polyfillSpeedUp: 1000, 
+    polyfillSpeedDown: 300,
+    preventSelect: true,
+    only: null
+       });
+  
+}
+
+            </script>
+          </head>
+          <body>
+          </body>
+        </html>
+      "></iframe><h2 id=conclusiones-y-trabajo-futuro>Conclusiones y trabajo futuro
+<a class=anchor href=#conclusiones-y-trabajo-futuro>#</a></h2></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/visualcomputing/showcase/commit/cc0970d6ba769676840a109e67c1ce3d46c43892 title="Last modified by Santiago Vargas Avendaño | May 22, 2022" target=_blank rel=noopener><img src=/showcase/svg/calendar.svg class=book-icon alt=Calendar>
+<span>May 22, 2022</span></a></div></div><script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#espacios>Espacios</a><ul><li><a href=#planteamiento-del-problema>Planteamiento del problema</a></li><li><a href=#antecedentes>Antecedentes</a></li><li><a href=#código-solución-y-resultados>Código (solución) y resultados</a></li><li><a href=#conclusiones-y-trabajo-futuro>Conclusiones y trabajo futuro</a></li></ul></li></ul></nav></div></aside></main></body></html>
