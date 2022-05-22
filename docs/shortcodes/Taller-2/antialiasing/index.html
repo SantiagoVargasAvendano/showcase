@@ -1,8 +1,186 @@
-<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content><meta property="og:description" content><meta property="og:type" content="article"><meta property="og:url" content="https://santiagovargasavendano.github.io/showcase/docs/shortcodes/Taller-2/antialiasing/"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2022-05-13T21:54:32-05:00"><title>Antialiasing | Computación visual</title><link rel=manifest href=/showcase/manifest.json><link rel=icon href=/showcase/favicon.png type=image/x-icon><link rel=stylesheet href=/showcase/book.min.ab46de3e725a6415339a37bba23a0067534a37289b063c9f8d011515a63097a8.css integrity="sha256-q0bePnJaZBUzmje7ojoAZ1NKNyibBjyfjQEVFaYwl6g=" crossorigin=anonymous><script defer src=/showcase/flexsearch.min.js></script>
-<script defer src=/showcase/en.search.min.6f3924680d5093673e73cffe8ca1ce649dd4f617d6ace150c7dd7c401b224d91.js integrity="sha256-bzkkaA1Qk2c+c8/+jKHOZJ3U9hfWrOFQx918QBsiTZE=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Anti-Aliasing #  Planteamiento del problema #  Considere un triángulo renderizado, si nos acercamos lo suficiente sobre la imagen del mismo, notaremos que los bordes del triángulo no son regulares, en cambio tiene un patrón de “escalera”, de “sierra” o de “tablero de ajedrez”. Dichos bordes que son observados, son llamados “jaggies” o bordes escalonados, y son el resultado de lo que en realidad está sucediendo, que no es más que la figura, en este caso el triángulo, se encuentra dividida en píxeles."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content><meta property="og:description" content="Anti-Aliasing #  Planteamiento del problema #  Considere un triángulo renderizado, si nos acercamos lo suficiente sobre la imagen del mismo, notaremos que los bordes del triángulo no son regulares, en cambio tiene un patrón de “escalera”, de “sierra” o de “tablero de ajedrez”. Dichos bordes que son observados, son llamados “jaggies” o bordes escalonados, y son el resultado de lo que en realidad está sucediendo, que no es más que la figura, en este caso el triángulo, se encuentra dividida en píxeles."><meta property="og:type" content="article"><meta property="og:url" content="https://santiagovargasavendano.github.io/showcase/docs/shortcodes/Taller-2/antialiasing/"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2022-05-21T19:48:29-05:00"><title>Antialiasing | Computación visual</title><link rel=manifest href=/showcase/manifest.json><link rel=icon href=/showcase/favicon.png type=image/x-icon><link rel=stylesheet href=/showcase/book.min.ab46de3e725a6415339a37bba23a0067534a37289b063c9f8d011515a63097a8.css integrity="sha256-q0bePnJaZBUzmje7ojoAZ1NKNyibBjyfjQEVFaYwl6g=" crossorigin=anonymous><script defer src=/showcase/flexsearch.min.js></script>
+<script defer src=/showcase/en.search.min.4c808796a66a9f3b6bafdc4028f8313cd6e76bf30ea26f03e4c7240a0ccdc5dd.js integrity="sha256-TICHlqZqnztrr9xAKPgxPNbna/MOom8D5MckCgzNxd0=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
 <input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/showcase/><span>Computación visual</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li class=book-section-flat><span>Shortcodes</span><ul><li><a href=/showcase/docs/shortcodes/integrantes/>Integrantes</a></li><li><a href=/showcase/docs/shortcodes/referencias/>Referencias</a></li><li><a href=/showcase/docs/shortcodes/registros/>Registros</a></li><li><input type=checkbox id=section-543c92395a5da43e568c54aed57a7bf6 class=toggle>
 <label for=section-543c92395a5da43e568c54aed57a7bf6 class="flex justify-between"><a href=/showcase/docs/shortcodes/Taller-1/>Taller 1</a></label><ul><li><a href=/showcase/docs/shortcodes/Taller-1/ebbinghaus/>Ebbinghaus</a></li><li><a href=/showcase/docs/shortcodes/Taller-1/estereoquinetico/>Estereoquinetico</a></li><li><a href=/showcase/docs/shortcodes/Taller-1/piramide/>Piramide</a></li></ul></li><li><input type=checkbox id=section-3339356ac915f37974c010a9ff982b95 class=toggle checked>
-<label for=section-3339356ac915f37974c010a9ff982b95 class="flex justify-between"><a href=/showcase/docs/shortcodes/Taller-2/>Taller 2</a></label><ul></ul></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/showcase/svg/menu.svg class=book-icon alt=Menu></label>
+<label for=section-3339356ac915f37974c010a9ff982b95 class="flex justify-between"><a href=/showcase/docs/shortcodes/Taller-2/>Taller 2</a></label><ul><li><a href=/showcase/docs/shortcodes/Taller-2/antialiasing/ class=active>Antialiasing</a></li></ul></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/showcase/svg/menu.svg class=book-icon alt=Menu></label>
 <strong>Antialiasing</strong>
-<label for=toc-control><img src=/showcase/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents></nav></aside></header><article class=markdown></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/visualcomputing/showcase/commit/3dcffe1bb9f0ab0fc92f9210a9d67177baa661ac title="Last modified by Santiago Vargas Avendaño | May 14, 2022" target=_blank rel=noopener><img src=/showcase/svg/calendar.svg class=book-icon alt=Calendar>
-<span>May 14, 2022</span></a></div></div><script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents></nav></div></aside></main></body></html>
+<label for=toc-control><img src=/showcase/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#anti-aliasing>Anti-Aliasing</a><ul><li><a href=#planteamiento-del-problema>Planteamiento del problema</a></li><li><a href=#antecedentes>Antecedentes</a></li><li><a href=#código-solución-y-resultados>Código (solución) y resultados</a></li><li><a href=#conclusiones-y-trabajo-futuro>Conclusiones y trabajo futuro</a></li></ul></li></ul></nav></aside></header><article class=markdown><h1 id=anti-aliasing>Anti-Aliasing
+<a class=anchor href=#anti-aliasing>#</a></h1><h2 id=planteamiento-del-problema>Planteamiento del problema
+<a class=anchor href=#planteamiento-del-problema>#</a></h2><p>Considere un triángulo renderizado, si nos acercamos lo suficiente sobre la imagen del mismo, notaremos que los bordes del triángulo no son regulares, en cambio tiene un patrón de “escalera”, de “sierra” o de “tablero de ajedrez”. Dichos bordes que son observados, son llamados “jaggies” o bordes escalonados, y son el resultado de lo que en realidad está sucediendo, que no es más que la figura, en este caso el triángulo, se encuentra dividida en píxeles. En el proceso de rasterización lo que se realiza es descomponer una superficie continua, el triángulo, en elementos discretos, los píxeles. A este efecto en computación gráfica, se le conoce con el nombre de aliasing, que de forma rápida se puede ver como “el escalonamiento visual de los bordes que se produce en una imagen cuando la resolución es demasiado baja”. Siendo más precisos en su definición, el aliasing es el defecto gráfico característico que hace que en una pantalla ciertas curvas y líneas inclinadas presenten un efecto visual tipo “sierra” o “escalón”, dicho defecto se presenta cuando se intenta representar una imagen con curvas y líneas inclinadas en una pantalla, framebuffer o imagen, pero que debido a la resolución finita de la misma resulta que este sea incapaz de representar la curva como es, y por tanto dichas curvas se muestran en pantalla dentadas al estar compuestas por los píxeles.</p><h2 id=antecedentes>Antecedentes
+<a class=anchor href=#antecedentes>#</a></h2><p>En consecuencia, para abordar los problemas generados por el aliasing, en computación visual se han desarrollado a lo largo de varias décadas algoritmos que buscan disminuir el impacto que tiene este defecto en el aspecto visual de los gráficos, entre los que resaltan nombres como el de Herbert Freeman en 1974 con &ldquo;Computer processing of line drawing images&rdquo;, o Edwin Catmull con trabajos como “A Subdivision Algorithm for Computer Display of Curved Surfaces” o &ldquo;A hidden-surface algorithm with anti-aliasing&rdquo; en los años 1974 y 1978 respectivamente. Dichos algoritmos se han determinado como algoritmos de anti-aliasing, o también conocido simplemente como AA, cuya definición más básica sería la de buscar “el suavizado de los bordes irregulares en las imágenes digitales promediando los colores de los píxeles en las fronteras”.</p><p><img src=/showcase/sketches/AA.png alt="Santiago Vargas" title="Santiago Vargas">
+Figura [1]. La letra de la izquierda sufre de aliasing. A la letra de la derecha se le ha aplicado anti-aliasing para que los bordes parezcan más suaves.</p><p>En cambio de renderizar con una única muestra por píxel, se divide el píxel en sub-píxeles, lo que conforme a mayor cantidad de los mismos, permite ilustrar los bordes de los objetos con mayor precisión. En la actualidad existen distintos métodos para tratar el problema del aliasing, Using high-resolution display, Post filtering (Supersampling), Pre-filtering (Area Sampling), Pixel phasing.</p><p>Hacer uso de dispositivos con mayor resolución - Una de las soluciones que se presentan para reducir el efecto visual causado por el aliasing es utilizar pantallas o dispositivos que sean de alta definición, con esto los “jaggies” o “bordes dentados” serán conforme mayor resolución cada vez más indistinguibles para el ojo humano, con lo cual estos bordes se tornan difusos y comenzarán a parecer más lisos.</p><p>Pre-filtración, Muestreo de área - En el muestreo de área, la intensidad de los píxeles es determinada calculando las áreas superpuestas de cada píxel con los objetos que van a ser desplegados, considerando los píxeles como áreas. Este método es conocido como pre-filtración ya que es un procedimiento que se hace antes de generar la imagen rasterizada.</p><p>Fases de pixel - El método se basa en desplazar la posición de los píxeles a posiciones aproximadas a la geometría del objeto. Algunos sistemas permiten que se ajuste el tamaño de los píxeles individuales para distribuir las intensidades, lo que es útil en la fase de píxeles.</p><p>Post-filtración, Sobremuestreo - Los objetos son muestreados con una resolución superior y son desplegados con una resolución menor. En este método se incrementa la resolución de muestreo suponiendo que la pantalla estuviera compuesta de una cuadrícula más delgada de lo que realmente es. Para el cálculo de la intensidad de los píxeles se realiza al combinar o promediar los valores de las intensidades de los subpixeles que lo componen. Este método es conocido como post-filtración debido a que el procedimiento es realizado después de generar la imagen rasterizada. Un estilo mejorado de AA es el MSAA (antialiasing multimuestreo), que es un método más rápido y aproximado de supermuestreo AA, que tiene un menor costo computacional. Actualmente, las grandes empresas de tarjetas gráficas como CSAA de NVIDIA y CFAA de AMD desarrollan técnicas de sobremuestreo mejores y más sofisticadas, con el objetivo de resaltar en el mercado y mejorar el rendimiento de sus hardwares.</p><h2 id=código-solución-y-resultados>Código (solución) y resultados
+<a class=anchor href=#c%c3%b3digo-soluci%c3%b3n-y-resultados>#</a></h2><p><details><summary>Código en p5.js</summary><div class=markdown-inner><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>AA</span>(<span style=color:#a6e22e>quadrilleF</span>, <span style=color:#a6e22e>points</span>, <span style=color:#a6e22e>row0</span>, <span style=color:#a6e22e>col0</span>, <span style=color:#a6e22e>row1</span>, <span style=color:#a6e22e>col1</span>, <span style=color:#a6e22e>row2</span>, <span style=color:#a6e22e>col2</span>, <span style=color:#a6e22e>shader</span>, <span style=color:#a6e22e>pattern0</span>, <span style=color:#a6e22e>pattern1</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>pattern0</span>, <span style=color:#a6e22e>pattern2</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>pattern0</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (Array.<span style=color:#a6e22e>isArray</span>(<span style=color:#a6e22e>pattern0</span>) <span style=color:#f92672>&amp;&amp;</span> Array.<span style=color:#a6e22e>isArray</span>(<span style=color:#a6e22e>pattern1</span>) <span style=color:#f92672>&amp;&amp;</span> Array.<span style=color:#a6e22e>isArray</span>(<span style=color:#a6e22e>pattern2</span>)) {
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>&lt;</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>height</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>j</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>j</span> <span style=color:#f92672>&lt;</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>width</span>; <span style=color:#a6e22e>j</span><span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>          <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>numberPoints</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>          <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>k</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>k</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>points</span>; <span style=color:#a6e22e>k</span><span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>             <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>h</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>h</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>points</span>; <span style=color:#a6e22e>h</span><span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>               <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>coords</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>quadrilleF</span>.<span style=color:#a6e22e>_barycentric_coords</span>(<span style=color:#a6e22e>i</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>0.01</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>k</span><span style=color:#f92672>*</span>(<span style=color:#ae81ff>0.98</span>)<span style=color:#f92672>/</span>(<span style=color:#a6e22e>points</span><span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>), <span style=color:#a6e22e>j</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>0.01</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>h</span><span style=color:#f92672>*</span>(<span style=color:#ae81ff>0.98</span>)<span style=color:#f92672>/</span>(<span style=color:#a6e22e>points</span><span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>), <span style=color:#a6e22e>row0</span>, <span style=color:#a6e22e>col0</span>, <span style=color:#a6e22e>row1</span>, <span style=color:#a6e22e>col1</span>, <span style=color:#a6e22e>row2</span>, <span style=color:#a6e22e>col2</span>);
+</span></span><span style=display:flex><span>               <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>coords</span>.<span style=color:#a6e22e>w0</span> <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>0</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#a6e22e>coords</span>.<span style=color:#a6e22e>w1</span> <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>0</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#a6e22e>coords</span>.<span style=color:#a6e22e>w2</span> <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>0</span>) {
+</span></span><span style=display:flex><span>                 <span style=color:#a6e22e>numberPoints</span><span style=color:#f92672>++</span>;  
+</span></span><span style=display:flex><span>               }
+</span></span><span style=display:flex><span>             }
+</span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>          <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>numberPoints</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>0</span>) {
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>coords</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>_barycentric_coords</span>(<span style=color:#a6e22e>i</span>, <span style=color:#a6e22e>j</span>, <span style=color:#a6e22e>row0</span>, <span style=color:#a6e22e>col0</span>, <span style=color:#a6e22e>row1</span>, <span style=color:#a6e22e>col1</span>, <span style=color:#a6e22e>row2</span>, <span style=color:#a6e22e>col2</span>);
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>length</span> <span style=color:#f92672>=</span> Math.<span style=color:#a6e22e>max</span>(<span style=color:#a6e22e>pattern0</span>.<span style=color:#a6e22e>length</span>, <span style=color:#a6e22e>pattern1</span>.<span style=color:#a6e22e>length</span>, <span style=color:#a6e22e>pattern2</span>.<span style=color:#a6e22e>length</span>);
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>let</span> <span style=color:#a6e22e>_pattern</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Array(<span style=color:#a6e22e>length</span>);
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>k</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>k</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>_pattern</span>.<span style=color:#a6e22e>length</span>; <span style=color:#a6e22e>k</span><span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>                <span style=color:#a6e22e>_pattern</span>[<span style=color:#a6e22e>k</span>] <span style=color:#f92672>=</span> (<span style=color:#a6e22e>pattern0</span>[<span style=color:#a6e22e>k</span>] <span style=color:#f92672>??</span> <span style=color:#ae81ff>0</span>) <span style=color:#f92672>*</span> <span style=color:#a6e22e>coords</span>.<span style=color:#a6e22e>w0</span> <span style=color:#f92672>+</span> (<span style=color:#a6e22e>pattern1</span>[<span style=color:#a6e22e>k</span>] <span style=color:#f92672>??</span> <span style=color:#ae81ff>0</span>) <span style=color:#f92672>*</span> <span style=color:#a6e22e>coords</span>.<span style=color:#a6e22e>w1</span> <span style=color:#f92672>+</span> (<span style=color:#a6e22e>pattern2</span>[<span style=color:#a6e22e>k</span>] <span style=color:#f92672>??</span> <span style=color:#ae81ff>0</span>) <span style=color:#f92672>*</span> <span style=color:#a6e22e>coords</span>.<span style=color:#a6e22e>w2</span>;
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>for</span> (<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>k</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>k</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>_pattern</span>.<span style=color:#a6e22e>length</span>; <span style=color:#a6e22e>k</span><span style=color:#f92672>++</span>) {
+</span></span><span style=display:flex><span>              <span style=color:#a6e22e>_pattern</span>[<span style=color:#a6e22e>k</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>255</span> <span style=color:#f92672>-</span> (<span style=color:#ae81ff>255</span> <span style=color:#f92672>-</span> <span style=color:#a6e22e>_pattern</span>[<span style=color:#a6e22e>k</span>])<span style=color:#f92672>/</span>(<span style=color:#a6e22e>points</span><span style=color:#f92672>*</span><span style=color:#a6e22e>points</span>)<span style=color:#f92672>*</span><span style=color:#a6e22e>numberPoints</span>;
+</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>            <span style=color:#a6e22e>quadrilleF</span>.<span style=color:#a6e22e>_memory2D</span>[<span style=color:#a6e22e>i</span>][<span style=color:#a6e22e>j</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>shader</span>({ <span style=color:#a6e22e>pattern</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>_pattern</span>, <span style=color:#a6e22e>row</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>i</span>, <span style=color:#a6e22e>col</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>j</span> });
+</span></span><span style=display:flex><span>          }
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span></code></pre></div></div></details>Para generar un triángulo con Anti-aliasing presione la tecla &ldquo;r&rdquo;</p><iframe id=pyramid style=width:525px;height:825px srcdoc="
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js></script>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/addons/p5.sound.min.js></script>
+             <script src=https://cdn.jsdelivr.net/gh/objetos/p5.quadrille.js/p5.quadrille.js></script> 
+            
+            
+            
+            
+            <script>
+              
+const ROWS = 100;
+const COLS = 100;
+let numberPoints = 2;
+let quadrilleAA, quadrille, length;
+let color0 = [255,0,0], color1 = [0,255,0], color2 = [0,0,255];
+let row0, col0, row1, col1, row2, col2;
+
+function setup() {
+  createCanvas(500, 800);
+  quadrilleAA = createQuadrille(ROWS, COLS);
+  quadrille = createQuadrille(ROWS, COLS);
+  length = 400/ROWS;
+  
+  colorPicker0 = createColorPicker('red');
+  colorPicker0.position(420, 20);
+  
+  colorPicker1 = createColorPicker('green');
+  colorPicker1.position(420, 70);
+  
+  colorPicker2 = createColorPicker('blue');
+  colorPicker2.position(420, 120);
+  
+  colorPicker0.changed(changeColor);
+  colorPicker1.changed(changeColor);
+  colorPicker2.changed(changeColor);
+
+  inp = createInput('');
+  inp.position(420, 200);
+  inp.size(50);
+  inp.input(myInputEvent);  
+}
+
+function myInputEvent() {
+  numberPoints = this.value();
+}
+
+function changeColor(){
+  color0 = colorPicker0.color().levels.slice(0, 3);
+  color1 = colorPicker1.color().levels.slice(0, 3);
+  color2 = colorPicker2.color().levels.slice(0, 3);
+}
+
+function draw() {
+  background('white');
+  textSize(15);
+  text('Puntos:', 420, 190);
+  
+  drawQuadrille(quadrilleAA, { cellLength: length, outline: 'black', outlineWeight:0.001, board: false });
+  drawQuadrille(quadrille, { cellLength: length, outline: 'black', outlineWeight:0.001, board: false , pixelY: 400});
+  line(0,400,400,400);
+  line(400,0,400,800);
+}
+
+function keyPressed() {
+  randomize();
+  quadrilleAA.clear();
+  quadrille.clear();
+  if (key === 'r') {
+    AA(quadrilleAA, numberPoints, row0, col0, row1, col1, row2, col2, colorize_shaderAA, color0, color1, color2);
+    quadrille.rasterizeTriangle(row0, col0, row1, col1, row2, col2, colorize_shaderAA, color0, color1, color2);
+  }
+}
+
+function colorize_shaderAA({ pattern: mixin }) {
+  let rgb = mixin.slice(0, 3);
+  return color(rgb);
+}
+
+function randomize() {
+  col0 = int(random(0, COLS));
+  row0 = int(random(0, ROWS));
+  col1 = int(random(0, COLS));
+  row1 = int(random(0, ROWS));
+  col2 = int(random(0, COLS));
+  row2 = int(random(0, ROWS));
+}
+
+function AA(quadrilleF, points, row0, col0, row1, col1, row2, col2, shader, pattern0, pattern1 = pattern0, pattern2 = pattern0) {
+    if (Array.isArray(pattern0) && Array.isArray(pattern1) && Array.isArray(pattern2)) {
+      for (let i = 0; i < this.height; i++) {
+        for (let j = 0; j < this.width; j++) {
+          let numberPoints = 0;
+          for (let k = 0; k < points; k++) {
+             for (let h = 0; h < points; h++) {
+               let coords = quadrilleF._barycentric_coords(i + 0.01 + k*(0.98)/(points-1), j + 0.01 + h*(0.98)/(points-1), row0, col0, row1, col1, row2, col2);
+               if (coords.w0 >= 0 && coords.w1 >= 0 && coords.w2 >= 0) {
+                 numberPoints++;  
+               }
+             }
+          }
+          if (numberPoints > 0) {
+            let coords = this._barycentric_coords(i, j, row0, col0, row1, col1, row2, col2);
+            let length = Math.max(pattern0.length, pattern1.length, pattern2.length);
+            let _pattern = new Array(length);
+            for (let k = 0; k < _pattern.length; k++) {
+                _pattern[k] = (pattern0[k] ?? 0) * coords.w0 + (pattern1[k] ?? 0) * coords.w1 + (pattern2[k] ?? 0) * coords.w2;
+            }
+            for (let k = 0; k < _pattern.length; k++) {
+              _pattern[k] = 255 - (255 - _pattern[k])/(points*points)*numberPoints;
+            }
+            quadrilleF._memory2D[i][j] = shader({ pattern: _pattern, row: i, col: j });
+          }
+        }
+      }
+    }
+  }
+
+function _barycentric_coords(row, col, row0, col0, row1, col1, row2, col2) {
+    let edges = this._edge_functions(row, col, row0, col0, row1, col1, row2, col2);
+    let area = this._parallelogram_area(row0, col0, row1, col1, row2, col2);
+    return { w0: edges.e12 / area, w1: edges.e20 / area, w2: edges.e01 / area };
+  }
+
+function  _parallelogram_area(row0, col0, row1, col1, row2, col2) {
+    return (col1 - col0) * (row2 - row0) - (col2 - col0) * (row1 - row0);
+  }
+
+ function _edge_functions(row, col, row0, col0, row1, col1, row2, col2) {
+    let e01 = (row0 - row1) * col + (col1 - col0) * row + (col0 * row1 - row0 * col1);
+    let e12 = (row1 - row2) * col + (col2 - col1) * row + (col1 * row2 - row1 * col2);
+    let e20 = (row2 - row0) * col + (col0 - col2) * row + (col2 * row0 - row2 * col0);
+    return { e01, e12, e20 };
+  }
+
+            </script>
+          </head>
+          <body>
+          </body>
+        </html>
+      "></iframe><p>Para la realización de este ejercicio de Anti-aliasing nos basamos en el método de Supersample Anti-aliasing (SSAA), mediante el cual por cada pixel existente dentro de la grilla original generamos una subgrilla virtual (la cantidad de filas y columnas de esta puede ser modificada por el usuario) dentro de cada uno de estos y mediante el uso de las coordenadas baricéntricas determinamos cual es la cantidad de subpíxeles dentro de cada pixel que se encuentra a su vez dentro de las coordenadas del triángulo, valga la pena recalcar que entre mayor sea el tamaño de la subgrilla virtual mayor cantidad de subpíxeles van a existir y el muestreo será más exacto y por lo tanto se tendrán resultados visuales más refinados y sutiles para el ojo humano.
+A partir de la cantidad de subpixeles que se encuentren dentro del triangulo podemos tomar la decisión sobre cual es la influencia que tiene este pixel dentro de nuestro muestreo de color, de esa manera asignarle el tono correspondiente, siendo los pixeles que menos puntos tienen dentro del triángulo los que poseen un color más tenue o cercano al blanco. De la misma manera se implementó gracias al uso de las coordenadas baricéntricas un sombreado del triángulo, donde cada una de sus vértices tiene un color (que puede ser escogido por el usuario en la animación) y a partir de estas se calcula el color de cada uno de los puntos coincidentes en la construcción del triángulo.</p><h2 id=conclusiones-y-trabajo-futuro>Conclusiones y trabajo futuro
+<a class=anchor href=#conclusiones-y-trabajo-futuro>#</a></h2><p>Es importante resaltar la relevancia que tienen las coordenadas baricéntricas y sus potenciales usos en el área de computación gráfica. Como pudimos observar durante la experimentación y la investigación acerca del tema, las coordenadas fueron una herramienta vital para la construcción de nuestro ejemplo, permitiendo submuestrear cada pixel basados en la idea identificar gracias a los valores arrojados por las coordenadas si el subpixel estaba en el interior o no del triángulo. Durante las búsquedas que se realizaron sobre el tema se encontró que actualmente el anti-aliasing es un tema de relevancia y más en el campo de los videojuegos, debido a los agradables efectos que genera en los gráficos y cómo logra mejorar la calidad estética de lo que diariamente observamos a través de las pantallas. Pensando en futuro, se sugiere trabajar sobre las ideas que actualmente ya se han desarrollado, en especial sobre los algoritmos basados en MSAA, y observando sus costos computacionales con respecto a su antecesor el SSAA.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/visualcomputing/showcase/commit/92d926f9e1d2266d2cf535ada58268fbacb73314 title="Last modified by Santiago Vargas Avendaño | May 22, 2022" target=_blank rel=noopener><img src=/showcase/svg/calendar.svg class=book-icon alt=Calendar>
+<span>May 22, 2022</span></a></div></div><script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#anti-aliasing>Anti-Aliasing</a><ul><li><a href=#planteamiento-del-problema>Planteamiento del problema</a></li><li><a href=#antecedentes>Antecedentes</a></li><li><a href=#código-solución-y-resultados>Código (solución) y resultados</a></li><li><a href=#conclusiones-y-trabajo-futuro>Conclusiones y trabajo futuro</a></li></ul></li></ul></nav></div></aside></main></body></html>
