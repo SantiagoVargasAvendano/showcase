@@ -10,3 +10,8 @@
 - [Ebbinghaus](https://en.wikipedia.org/wiki/Ebbinghaus_illusion)
 
 ## Segundo taller
+- [Aliasing & Anti-aliasing](https://helpx.adobe.com/photoshop-elements/key-concepts/aliasing-anti-aliasing.html)
+- [Computer Graphics Antialiasing](https://www.geeksforgeeks.org/computer-graphics-antialiasing/ )
+- [Aliasing](https://es.wikipedia.org/wiki/Aliasing)
+- [Rasterization: a Practical Implementation](https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/rasterization-practical-implementation)
+- []()
