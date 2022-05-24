@@ -8,7 +8,7 @@ Considere un triángulo renderizado, si nos acercamos lo suficiente sobre la ima
 
 En consecuencia, para abordar los problemas generados por el aliasing, en computación visual se han desarrollado a lo largo de varias décadas algoritmos que buscan disminuir el impacto que tiene este defecto en el aspecto visual de los gráficos, entre los que resaltan nombres como el de Herbert Freeman en 1974 con "Computer processing of line drawing images", o Edwin Catmull con trabajos como “A Subdivision Algorithm for Computer Display of Curved Surfaces” o  "A hidden-surface algorithm with anti-aliasing" en los años 1974 y 1978 respectivamente. Dichos algoritmos se han determinado como algoritmos de anti-aliasing, o también conocido simplemente como AA, cuya definición más básica sería la de buscar “el suavizado de los bordes irregulares en las imágenes digitales promediando los colores de los píxeles en las fronteras”.
 
-![Santiago Vargas](/showcase/sketches/AA.png 'Santiago Vargas')
+![AA](/showcase/sketches/AA.png 'Anti-aliasing')
 Figura [1]. La letra de la izquierda sufre de aliasing. A la letra de la derecha se le ha aplicado anti-aliasing para que los bordes parezcan más suaves.
 
 En cambio de renderizar con una única muestra por píxel, se divide el píxel en sub-píxeles, lo que conforme a mayor cantidad de los mismos, permite ilustrar los bordes de los objetos con mayor precisión. En la actualidad existen distintos métodos para tratar el problema del aliasing, Using high-resolution display, Post filtering (Supersampling), Pre-filtering (Area Sampling), Pixel phasing.
@@ -185,6 +185,9 @@ function  _parallelogram_area(row0, col0, row1, col1, row2, col2) {
 {{< /p5-global-iframe >}}
 
 Para la realización de este ejercicio de Anti-aliasing  nos basamos en el método de Supersample Anti-aliasing (SSAA), mediante el cual por cada pixel existente dentro de la grilla original generamos una subgrilla virtual (la cantidad de filas y columnas de esta puede ser modificada por el usuario) dentro de cada uno de estos y mediante el uso de las coordenadas baricéntricas determinamos cual es la cantidad de subpíxeles dentro de cada pixel que se encuentra a su vez dentro de las coordenadas del triángulo, valga la pena recalcar que entre mayor sea el tamaño de la subgrilla virtual mayor cantidad de subpíxeles van a existir y el muestreo será más exacto y por lo tanto se tendrán resultados visuales más refinados y sutiles para el ojo humano. 
+
+![AA_triangles](/showcase/sketches/AA_triangles.jpg 'AA_triangles') <br>
+
 A partir de la cantidad de subpixeles que se encuentren dentro del triangulo podemos tomar la decisión sobre cual es la influencia que tiene este pixel dentro de nuestro muestreo de color, de esa manera asignarle el tono correspondiente, siendo los pixeles que menos puntos tienen dentro del triángulo los que poseen un color más tenue o cercano al blanco. De la misma manera se implementó gracias al uso de las coordenadas baricéntricas un sombreado del triángulo, donde cada una de sus vértices tiene un color (que puede ser escogido por el usuario en la animación) y a partir de estas se calcula el color de cada uno de los puntos coincidentes en la construcción del triángulo. 
 
 

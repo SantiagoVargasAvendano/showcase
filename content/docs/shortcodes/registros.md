@@ -26,7 +26,7 @@ Esta fue la primera sesión para la realización del taller, en esta revisamos c
 
 <br>
 
-{{< details title="06/mayo/2022" open=false >}}
+{{< details title="05/mayo/2022" open=false >}}
 Esta sesión fue la primera aproximación que tuvimos con la libreria de Quadrille, revisamos toda la documentación necesaria y se habló con el profesor sobre el ejercicio que se iba a realizar, de esta charla se encontró que a partir del metodo de RasterizeTriangle ibamos a poder hacer la implementación de Anti-aliasing.
 {{< /details >}}
 

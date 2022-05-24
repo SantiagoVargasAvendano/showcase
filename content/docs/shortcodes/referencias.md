@@ -14,4 +14,5 @@
 - [Computer Graphics Antialiasing](https://www.geeksforgeeks.org/computer-graphics-antialiasing/ )
 - [Aliasing](https://es.wikipedia.org/wiki/Aliasing)
 - [Rasterization: a Practical Implementation](https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/rasterization-practical-implementation)
-- []()
+- [3D user interaction](https://en.wikipedia.org/wiki/3D_user_interaction)
+- [World transform](https://docs.microsoft.com/en-us/windows/uwp/graphics-concepts/world-transform)
