@@ -48,7 +48,11 @@ function initPressure() {
 ```
 {{< /details >}}
 
-Para empezar y detener la grabación dl dibujo presione la letra "r", para borrar el dibujo presione la letra "c", para agrandar el tamaño de la brocha presione la letra "a" y para disminuir el tamaño de la brocha presione la letra "m".
+Instrucciones para el manejo:
+- Para empezar y detener la grabación del dibujo presione la letra "r".
+- Para borrar el dibujo presione la letra "c".
+- Para agrandar el tamaño de la brocha presione la letra "a".
+- Para disminuir el tamaño de la brocha presione la letra "m".
 
 {{< p5-global-iframe id="spaces" lib1="https://cdn.jsdelivr.net/gh/VisualComputing/p5.treegl/p5.treegl.js" lib2="https://cdn.jsdelivr.net/gh/freshfork/p5.EasyCam@1.2.1/p5.easycam.js" lib3="/showcase/sketches/pressure.js" width="625" height="475" >}}
 // Brush controls
