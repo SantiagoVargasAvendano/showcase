@@ -16,3 +16,12 @@
 - [Rasterization: a Practical Implementation](https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/rasterization-practical-implementation)
 - [3D user interaction](https://en.wikipedia.org/wiki/3D_user_interaction)
 - [World transform](https://docs.microsoft.com/en-us/windows/uwp/graphics-concepts/world-transform)
+
+## Tercer taller
+- [Normal mapping base idea](https://github.com/aferriss/p5jsShaderExamples/tree/gh-pages/6_3d/6-3_vertexDisplacementFromTexture)
+- [Normal mapping](https://en.wikipedia.org/wiki/Normal_mapping)
+- [Region of interest](https://en.wikipedia.org/wiki/Region_of_interest)
+- [Image processing](https://en.wikipedia.org/wiki/Kernel_%28image_processing%29 )
+- [Color inversion](https://www.quora.com/How-exactly-does-color-inversion-work)
+- [Luma](https://en.wikipedia.org/wiki/Luma_(video) )
+
