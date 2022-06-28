@@ -97,6 +97,14 @@ function draw() {
 }
 {{< /p5-global-iframe >}}
 
+<br>
+
+<img src="/showcase/sketches/tex0.jpg" alt="drawing" width="200"/>
+<img src="/showcase/sketches/wood.jpg" alt="drawing" width="200"/>
+<img src="/showcase/sketches/wood2.jpg" alt="drawing" width="200"/>
+<img src="/showcase/sketches/xd.jpg" alt="drawing" width="200"/>
+<img src="/showcase/sketches/prueba.jpg" alt="drawing" width="200"/>
+
 En esta implementación se codifica las normales en el espacio del objeto, de modo que los componentes rojo, verde y azul (rgb) se corresponden directamente con las coordenadas X, Y y Z. 
 
 ## Conclusiones y trabajo futuro
